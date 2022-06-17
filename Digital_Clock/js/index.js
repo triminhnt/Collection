@@ -3,15 +3,6 @@ window.onload = function(){
 
     var month = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
-    // var h = 0;
-    // var m = 0;
-    // var s = 0;
-    // var day = '';
-    // var daytoday = 0;
-    // var date = 0;
-    // var mon = 0;
-    // var year = 0;
-
     setInterval(clock,1000);
 
     function clock() {
