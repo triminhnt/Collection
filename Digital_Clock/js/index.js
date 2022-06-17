@@ -34,7 +34,6 @@ window.onload = function(){
         document.querySelector('#year').innerHTML = year;
         document.querySelector(''+daysofweek[daytoday]+'').style.color = '#ffffff';
     }
-    
 
 };
 
