@@ -5,3 +5,9 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/triminhnt/Collection.git
 git push -u origin main
+
+git branch
+git status
+git add Cam_Tu/
+git commit -m "Cam Tu"
+git push -u origin master
