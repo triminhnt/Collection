@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans:wght@300;400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import './helpers/variables';
+
+@mixin MediaQuery($type) {
+    @if $type == $xs {
+        @media screen and (max-width: $xs) {
+            @content;
+        }
+    }
+    @else if $type == $sm {
+        @media screen and (max-width: $sm) {
+            @content;
+        }
+    }
+    @else if $type == $md {
+        @media screen and (max-width: $md) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (max-width: $lg) {
+            @content;
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    background-image: url('../assets/lib/images/pexels-tara-winstead-8386440.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include MediaQuery($md) {
+        max-width: $md;
+    }
+    @include MediaQuery($sm) {
+        max-width: $sm;
+    }
+    @include MediaQuery($xs) {
+        max-width: $xs;
+    }
+
+    .card {
+        position: relative;
+        width: $wc-500;
+        height: $hc-300;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        transition: 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include MediaQuery($xs) {
+            width: $wc-300;
+            height: $hc-500;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: $bg-ff;
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: -80px;
+            gap: 20px;
+
+            @include MediaQuery($xs) {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .imgBx {
+                position: relative;
+                width: $wc-120;
+                height: $hc-120;
+                overflow: hidden;
+                border-radius: 50%;
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+
+                @include MediaQuery($xs) {
+                    margin-left: 90px;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .details {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                color: $text-dark-1;
+
+                @include MediaQuery($xs) {
+                    margin-left: 10px;
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: $text-space-extra-small;
+                }
+
+                h3 {
+                    font-weight: $txt-font-weight-medium;
+                    color: $text-ee;
+                }
+
+                ion-icon {
+                    font-size: $txt-font-size-medium;
+                    color: $text-ee;
+                }
+
+                span {
+                    font-style: italic;
+                    color: $text-ee;
+                }
+
+            }
+        }
+    }
+}
