@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans:wght@300;400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
@@ -32,8 +33,8 @@ section {
 }
 section .card {
   position: relative;
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
@@ -48,7 +49,7 @@ section .card {
 @media screen and (max-width: 576px) {
   section .card {
     width: 300px;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -59,19 +60,28 @@ section .card:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 section .card::before {
-  content: "";
+  content: "LiOA - Chất lượng được khẳng định hơn 34 năm tại hơn 50 quốc gia \atrên thế giới";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 80px;
-  background: #7729ee;
+  background: #B2A4FF;
+  padding-top: 10px;
+  padding-left: 50px;
+  white-space: pre-wrap;
+}
+@media screen and (max-width: 576px) {
+  section .card::before {
+    content: "LiOA - Chất lượng được khẳng \ađịnh hơn 34 năm tại hơn 50 \aquốc gia trên thế giới";
+    height: 90px;
+  }
 }
 section .card .content {
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: -80px;
+  margin-top: -10px;
   gap: 20px;
 }
 @media screen and (max-width: 576px) {
@@ -79,6 +89,7 @@ section .card .content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: -40px;
   }
 }
 section .card .content .imgBx {
@@ -110,7 +121,7 @@ section .card .content .details {
 }
 @media screen and (max-width: 576px) {
   section .card .content .details {
-    margin-left: 60px;
+    margin-left: 20px;
   }
 }
 section .card .content .details div {
@@ -123,4 +134,20 @@ section .card .content .details h3 {
 }
 section .card .content .details ion-icon {
   font-size: 1.4em;
+}
+section .card .address {
+  position: relative;
+  margin-top: -130px;
+}
+section .card .address ion-icon {
+  font-size: 1.4em;
+}
+@media screen and (max-width: 576px) {
+  section .card .address {
+    margin-top: -150px;
+    margin-left: 10px;
+  }
+}
+section .wrap {
+  flex-wrap: wrap;
 }
