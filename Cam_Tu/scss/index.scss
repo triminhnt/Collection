@@ -52,8 +52,8 @@ section {
 
     .card {
         position: relative;
-        width: $wc-500;
-        height: $hc-300;
+        width: $wc-600;
+        height: $hc-400;
         background-color: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
         box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
@@ -67,7 +67,7 @@ section {
 
         @include MediaQuery($xs) {
             width: $wc-300;
-            height: $hc-500;
+            height: 600px; //$hc-500;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -79,26 +79,39 @@ section {
         }
 
         &::before {
-            content: '';
+            //content: "Trụ sở CN Miền Nam: Số 5 đường 17 A khu CN Biên Hoà 2, phường An Bình, \A TP Biên Hoà, tỉnh Đồng Nai";
+            content: "LiOA - Chất lượng được khẳng định hơn 34 năm tại hơn 50 quốc gia \A trên thế giới";
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 80px;
-            background: $bg-77;
+            background: $bg-b2;
+            padding-top: $text-space-extra-small;
+            padding-left: $text-space-light;
+            white-space: pre-wrap; // Line breaks in the CSS Content Property
+        }
+
+        @include MediaQuery($xs) {
+            &::before {
+                content: "LiOA - Chất lượng được khẳng \A định hơn 34 năm tại hơn 50 \A quốc gia trên thế giới";
+                height: 90px;
+            }
+            
         }
 
         .content {
             position: relative;
             display: flex;
             align-items: center;
-            margin-top: -80px;
+            margin-top: -10px;
             gap: 20px;
 
             @include MediaQuery($xs) {
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
+                margin-top: -40px;
             }
 
             .imgBx {
@@ -110,7 +123,7 @@ section {
                 box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
 
                 @include MediaQuery($xs) {
-                    margin-left: 90px;
+                    margin-left: $text-space-large;
                 }
 
                 img {
@@ -126,11 +139,11 @@ section {
             .details {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: $text-space-extra-small;
                 color: $text-dark-1;
 
                 @include MediaQuery($xs) {
-                    margin-left: 60px;
+                    margin-left: 20px;
                 }
 
                 div {
@@ -146,8 +159,25 @@ section {
                 ion-icon {
                     font-size: $txt-font-size-medium;
                 }
-
             }
         }
+        .address {
+            position: relative;
+            margin-top: -130px;
+
+            ion-icon {
+                font-size: $txt-font-size-medium;
+            }
+        }
+
+        @include MediaQuery($xs) {
+            .address {
+                margin-top: -150px;
+                margin-left: 10px;
+            }
+        }
+    }
+    .wrap {
+        flex-wrap: wrap;
     }
 }
